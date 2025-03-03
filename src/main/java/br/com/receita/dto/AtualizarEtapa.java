@@ -14,6 +14,7 @@ public class AtualizarEtapa {
 	
 	private Long id;
 	private Integer ordem;	
+	@NotBlank(message = "não pode estar em branco")
 	private String descricao;
 	private Receita receita;
 
