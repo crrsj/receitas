@@ -8,6 +8,7 @@ import java.util.Random;
 import br.com.receita.entidade.EtapaPreparo;
 import br.com.receita.entidade.Ingredientes;
 import br.com.receita.entidade.Receita;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -17,6 +18,7 @@ public class CriarReceita {
 	
 	private Integer codReceita = new Random().nextInt(1000 + 1) ;
 	private String dataReceita = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+	@NotBlank(message = "não pode estar em branco")
 	private String nome;	
 	private List<Ingredientes>ingredientes;	
 	private List<EtapaPreparo>etapaPreparo;

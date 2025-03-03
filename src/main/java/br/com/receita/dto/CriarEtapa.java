@@ -2,6 +2,7 @@ package br.com.receita.dto;
 
 import br.com.receita.entidade.EtapaPreparo;
 import br.com.receita.entidade.Receita;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ public class CriarEtapa {
 	
 	
 	private Integer ordem;	
+	@NotBlank(message = "não pode estar em branco")
 	private String descricao;
 	private Receita receita;
 
