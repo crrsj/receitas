@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 public class AtualizarReceita {
 
 	Long id;
+	@NotBlank(message = "não pode estar em branco")
 	String nome;
 	
 
