@@ -18,7 +18,7 @@ public class TratandoExcessoes {
 		var erros = new MensagemDeErro(HttpStatus.BAD_REQUEST, "Não foi possível; exeultar a ação desejada !");
 		return new ResponseEntity<>(erros, HttpStatus.BAD_REQUEST);
 	}
-	
+	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<?>ValidarCampos(MethodArgumentNotValidException ex){
 		var erros = ex.getFieldErrors();
 		return ResponseEntity.badRequest().body(erros.stream().map(ValidandoCampos::new).toList());
