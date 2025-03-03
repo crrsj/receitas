@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 public class AtualizarIng {
 	
 	private Long id;
+	@NotBlank(message = "não pode estar em branco")
 	private String nome;
 	private String quantidade;
 	
